@@ -2,6 +2,7 @@ services:
   - type: web
     name: pcsa-attendance-api
     runtime: node
+    plan: free
     rootDir: backend
     buildCommand: npm ci
     startCommand: npm start
@@ -22,6 +23,7 @@ services:
   - type: web
     name: pcsa-attendance-site
     runtime: node
+    plan: free
     rootDir: frontend
     buildCommand: npm ci && npm run build
     startCommand: npm run serve
