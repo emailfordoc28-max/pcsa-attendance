@@ -1,0 +1,35 @@
+services:
+  - type: web
+    name: pcsa-attendance-api
+    runtime: node
+    rootDir: backend
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: SALT
+        value: "10"
+      - key: ACCESS_TOKEN_PRIVATE_KEY
+        generateValue: true
+      - key: MONGO_URL
+        sync: false
+      - key: CLIENT_ORIGINS
+        sync: false
+  - type: web
+    name: pcsa-attendance-site
+    runtime: node
+    rootDir: frontend
+    buildCommand: npm ci && npm run build
+    startCommand: npm run serve
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: REACT_APP_URL
+        sync: false
+      - key: REACT_APP_GOOGLE_CLIENT_ID
+        sync: false

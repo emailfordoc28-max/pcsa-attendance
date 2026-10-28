@@ -1,0 +1,36 @@
+{
+  "name": "geo-location-backend",
+  "version": "1.0.0",
+  "description": "geo location attendence app for university",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js",
+    "start:dev": "nodemon app.js",
+    "start:lan": "HOST=0.0.0.0 PORT=5001 HTTPS=true SSL_CRT_FILE=./certs/attendance-lan.crt SSL_KEY_FILE=./certs/attendance-lan.key node app.js",
+    "setup:lan-https": "bash scripts/createLanCerts.sh",
+    "seed:demo": "node scripts/seedDemoUsers.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rajeev-dh/geo-location-backend.git"
+  },
+  "keywords": [
+    "mongodb",
+    "nodejs",
+    "express"
+  ],
+  "author": "Raman Yadav",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "joi": "^17.7.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.7.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: pcsa-attendance-api
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: SALT
+        value: "10"
+      - key: ACCESS_TOKEN_PRIVATE_KEY
+        generateValue: true
+      - key: MONGO_URL
+        sync: false
+      - key: CLIENT_ORIGINS
+        sync: false

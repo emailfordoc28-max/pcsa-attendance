@@ -1,0 +1,25 @@
+{
+  "short_name": "Patanjali Civil Services Academy",
+  "name": "Patanjali Civil Services Academy",
+  "icons": [
+    {
+      "src": "logo-64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "logo-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#071f63",
+  "background_color": "#ffffff"
+}
